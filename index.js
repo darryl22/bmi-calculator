@@ -16,15 +16,18 @@ app.post('/bmi-results', urlEncodedParser, function (request, response){
     const weight = request.body.weight;
     const height = request.body.height;
     const bmi = weight / (height * height);
+
+    var answer;
     if (bmi < 18.5){
-        response.end("You are underweight, bmi: " + bmi);
+        answer = "You are underweight, bmi: " + bmi;
     }else if (bmi >= 18.5 && bmi <= 24.9){
-        response.end("Your weight is normal, bmi: " + bmi);
+        answer = "Your weight is normal, bmi: " + bmi;
     }else if (bmi >= 25 && bmi <= 29.9){
-        response.end("You are overweight, bmi: " + bmi);
+        answer = "You are overweight, bmi: " + bmi;
     }else if (bmi >= 30){
-        response.end("You are obese, bmi: " + bmi);
+        answer = "You are obese, bmi: " + bmi;
     }
+    response.render("results", {message: answer});
 });
 
 app.listen(port);
