@@ -5,12 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bmi calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <style>
+        body{
+            font-family: 'Roboto', sans-serif;
+        }
+
         .form-input{
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
+            background-color: rgb(101, 182, 236);
         }
 
         h1{
@@ -23,9 +29,9 @@
     <h1>BMI calcultor</h1>
     <form action="/bmi-results" method="post" class="form-input">
     Enter weight:
-    <input type="text" name="weight" /> <br>
+    <input type="text" name="weight" class="input-text" /> <br>
     Enter height:
-    <input type="text" name="height" />
+    <input type="text" name="height" class="input-text" />
     <input type="submit" value="Submit">
     </form>
 </body>
